@@ -223,28 +223,6 @@
     );
   
 
-  /* —— Cover tiles with project video —— */
-  document.querySelectorAll(".tile.has-video").forEach(function (tile) {
-    tile.addEventListener("click", function (e) {
-      var url = tile.getAttribute("data-video");
-      if (!url) return;
-      // Play badge / middle area → open video; otherwise follow project link
-      var play = tile.querySelector(".tile-play");
-      if (!play) return;
-      var r = play.getBoundingClientRect();
-      var pad = 28;
-      var hit =
-        e.clientX >= r.left - pad &&
-        e.clientX <= r.right + pad &&
-        e.clientY >= r.top - pad &&
-        e.clientY <= r.bottom + pad;
-      if (hit) {
-        e.preventDefault();
-        window.open(url, "_blank", "noopener");
-      }
-    });
-  });
-
   /* —— Low-opacity background collage of works —— */
   (function initBgCollage() {
     if (document.querySelector(".bg-collage")) return;
