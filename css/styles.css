@@ -1146,3 +1146,94 @@ body.has-cursor .cursor-ring {
 
 .page-home .stage { z-index: 1; }
 .page-home .bg-collage { z-index: 0; opacity: 0.11; }
+
+
+/* —— Video on covers —— */
+.tile.has-video .tile-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 4;
+  width: 3rem;
+  height: 3rem;
+  margin: -1.5rem 0 0 -1.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(15, 15, 15, 0.45);
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+  transition: transform 0.35s var(--ease), background 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+.tile.has-video .tile-play::before {
+  content: "";
+  position: absolute;
+  left: 52%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.45rem 0 0.45rem 0.75rem;
+  border-color: transparent transparent transparent rgba(242, 242, 242, 0.95);
+  transform: translate(-35%, -50%);
+}
+.tile.has-video:hover .tile-play {
+  transform: scale(1.08);
+  background: rgba(15, 15, 15, 0.62);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+.tile.has-video .tile-label {
+  opacity: 0.85;
+  transform: none;
+}
+
+.hero-video-link {
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(242, 242, 242, 0.35);
+  padding-bottom: 0.15rem;
+}
+.hero-video-link:hover {
+  border-bottom-color: rgba(242, 242, 242, 0.9);
+}
+
+.video-frame {
+  width: min(960px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-embed-short {
+  aspect-ratio: 9 / 16;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.video-frame-short {
+  width: min(420px, 100%);
+}
+.frame-caption a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.project-title .has-vid {
+  font-style: normal;
+  font-size: 0.55em;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-left: 0.5em;
+}
