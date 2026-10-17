@@ -1240,3 +1240,61 @@ body.has-cursor .cursor-ring {
   opacity: 0.55;
   margin-left: 0.5em;
 }
+
+/* —— Background music toggle (top-right) —— */
+.site-header {
+  padding-right: 9.5rem;
+}
+
+.bg-music-toggle {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.75rem;
+  z-index: 120;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(207, 207, 207, 0.22);
+  border-radius: 999px;
+  background: rgba(15, 15, 15, 0.72);
+  color: var(--text-dim, #8a8a8a);
+  font-family: inherit;
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  cursor: pointer;
+  pointer-events: auto;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: color 0.35s var(--ease, ease), border-color 0.35s var(--ease, ease), background 0.35s var(--ease, ease);
+}
+
+.bg-music-toggle:hover {
+  color: var(--white, #f2f2f2);
+  border-color: rgba(242, 242, 242, 0.35);
+}
+
+.bg-music-toggle.is-off {
+  opacity: 0.72;
+}
+
+.bg-music-toggle__icon {
+  letter-spacing: 0;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    padding-right: 4rem;
+  }
+  .bg-music-toggle {
+    top: 0.95rem;
+    right: 0.9rem;
+    padding: 0.4rem 0.65rem;
+  }
+  .bg-music-toggle__label {
+    display: none;
+  }
+}
